@@ -29,10 +29,7 @@ const cakeStore = useCake();
     <slot name="footer" />
   </footer>
   <Transition :duration="250" name="nested">
-    <overlay
-      @close-overlay="uiStore.toggleLoginModal"
-      v-if="uiStore.loginModalOpen"
-    >
+    <overlay @close-overlay="uiStore.toggleLoginModal" v-if="uiStore.loginModalOpen">
       <loginForm class="inner" />
     </overlay>
   </Transition>
@@ -40,19 +37,12 @@ const cakeStore = useCake();
     <paymentForm v-if="uiStore.paymentModalOpen" />
   </Transition>
   <Transition :duration="250" name="nested">
-    <overlay
-      @close-overlay="uiStore.toggleRegisterModal"
-      v-if="uiStore.registerModalOpen"
-    >
+    <overlay @close-overlay="uiStore.toggleRegisterModal" v-if="uiStore.registerModalOpen">
       <registerForm class="inner" />
     </overlay>
   </Transition>
   <Transition :duration="0" name="nested">
-    <overlay
-      @click="uiStore.toggleCakeCardModal"
-      class="cakeOverlay"
-      v-if="uiStore.cakeCardModalOpen"
-    >
+    <overlay @click="uiStore.toggleCakeCardModal" class="cakeOverlay" v-if="uiStore.cakeCardModalOpen">
       <cakeCard class="inner" :cake="cakeStore.currentCake" />
     </overlay>
   </Transition>
@@ -65,17 +55,18 @@ const cakeStore = useCake();
 header {
   height: 10vh;
 }
+
 main {
   height: 85vh;
-  background-image: url("../assets/background.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+
 footer {
   height: 5vh;
-  background-color: rgb(39, 39, 68);
 }
+
 .drawer {
   width: 100%;
   border-radius: 1rem 1rem 0 0;
@@ -96,9 +87,11 @@ footer {
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1.25);
   }
+
   100% {
     transform: scale(1);
   }
@@ -110,6 +103,7 @@ footer {
 .nested-leave-active {
   transition: all 0.1s ease-in-out;
 }
+
 /* delay leave of parent element */
 .nested-leave-active {
   transition-delay: 0.1s;
@@ -126,6 +120,7 @@ footer {
   transition: all 0.3s ease-in-out;
   animation: bounce-in 0.3s reverse;
 }
+
 /* delay enter of nested element */
 .nested-enter-active .inner {
   transition-delay: 0.1s;

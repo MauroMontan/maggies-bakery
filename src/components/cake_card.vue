@@ -36,9 +36,6 @@ const addTocart = (cake: Cake) => {
         </div>
       </div>
     </div>
-    <div class="content">
-      <p v-text="cake.cakeDescription" />
-    </div>
 
     <div class="actions">
       <buyButton class="button">buy now</buyButton>
@@ -53,32 +50,26 @@ const addTocart = (cake: Cake) => {
   background-color: rgb(242, 211, 171, 1);
   overflow: hidden;
   width: 100%;
-  border-radius: 1rem;
-  max-height: 26rem;
-  min-height: 23rem;
+  border-radius: 0.5rem;
+  max-height: 20rem;
+  min-height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .card-modal {
   width: 30%;
   height: 100%;
 }
 
-.content {
-  overflow: auto;
-  padding: 0.4rem;
-}
-.content p {
-  text-align: justify;
-  font-size: 1rem;
-  color: rgb(39, 39, 68);
-}
+
 
 .card .cover {
-  height: 50%;
+  height: 85%;
   position: relative;
 }
+
 .card .cover .overlay {
   background-color: rgb(0, 0, 0, 0.4);
   width: 100%;
@@ -96,6 +87,7 @@ const addTocart = (cake: Cake) => {
   padding: 0.4rem 0.5rem;
   justify-content: space-between;
 }
+
 .card .cover img {
   width: 100%;
   height: 100%;
@@ -103,12 +95,15 @@ const addTocart = (cake: Cake) => {
   object-position: center;
   filter: blur(0.03rem);
 }
+
 .actions {
-  padding: 1rem;
+  height: fit-content;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
+
 .actions .button {
   margin: 0rem 0rem 0rem 1rem;
 }

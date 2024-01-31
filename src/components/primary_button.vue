@@ -15,13 +15,15 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   background-color: rgb(46, 46, 79);
   border: none;
+  gap: 0.5rem;
   padding: 0.5rem;
   transition: all 0.3s ease 0s;
   border-radius: 0.4rem;
 }
+
 button:active {
   transform: scale(90%);
 }

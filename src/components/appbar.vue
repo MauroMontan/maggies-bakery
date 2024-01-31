@@ -29,11 +29,7 @@ const cartIsEmpty = computed(() => (cakeStore.cartlenght === 0 ? true : false));
           </router-link>
         </li>
       </ul>
-      <primary-button
-        v-if="!userStore.isAuth"
-        @click="uiStore.toggleLoginModal"
-        class="login"
-      >
+      <primary-button v-if="!userStore.isAuth" @click="uiStore.toggleLoginModal" class="login">
         login
       </primary-button>
       <primary-button v-else @click="userStore.logout" class="login">
@@ -42,10 +38,7 @@ const cartIsEmpty = computed(() => (cakeStore.cartlenght === 0 ? true : false));
       <primary-button class="drawer-button" @click="uiStore.toggleDrawer">
         widgets
         <template v-slot:badge>
-          <span v-if="!cartIsEmpty" class="badge material-icons"
-            >shopping_cart</span
-          ></template
-        >
+          <span v-if="!cartIsEmpty" class="badge material-icons">shopping_cart</span></template>
       </primary-button>
     </div>
   </nav>
@@ -68,9 +61,11 @@ a {
 a:hover {
   color: rgb(26, 27, 38);
 }
+
 .title {
   cursor: pointer;
 }
+
 .actions {
   width: 45%;
   display: flex;
@@ -84,13 +79,16 @@ a:hover {
   height: 100%;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
+  justify-content: end;
+  gap: 1rem;
+  padding-inline-end: 1rem;
 }
 
 .actions ul li {
   list-style: none;
   text-align: center;
 }
+
 .drawer-button {
   display: none;
   position: absolute;
@@ -114,12 +112,15 @@ a:hover {
   .actions {
     justify-content: end;
   }
+
   .actions ul {
     display: none;
   }
+
   .login {
     display: none;
   }
+
   .drawer-button {
     display: block;
   }

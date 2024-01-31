@@ -16,10 +16,12 @@ const emit = defineEmits<Emit>();
 button {
   background-color: rgb(46, 46, 79);
   border: none;
+  font-size: 0.9rem;
   padding: 0.5rem;
   transition: all 0.3s ease 0s;
   border-radius: 0.4rem;
 }
+
 button:active {
   transform: scale(90%);
 }

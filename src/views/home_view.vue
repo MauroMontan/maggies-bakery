@@ -9,7 +9,7 @@ const cakeStore = useUi();
     <div class="box content">
       <h1>Maggie´s Bakery</h1>
       <p>
-        Don´t give a cake, give memories and experiences, make someone special
+        Don´t give a cake, give memories and experiences, make someone feel special
       </p>
       <primaryButton @click="cakeStore.toggleRegisterModal">
         register
@@ -34,12 +34,14 @@ const cakeStore = useUi();
 }
 
 button {
-  box-shadow: 0 8px 4px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
 }
+
 .box {
   width: 100%;
   height: 100%;
   display: flex;
+  gap: 1rem;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -48,11 +50,14 @@ button {
 .content h1 {
   font-size: 3rem;
 }
+
 .content p {
   margin-top: 2rem;
   line-height: 1.5;
   font-size: 1.5rem;
+  opacity: 0.5;
 }
+
 
 .image {
   width: 100%;
@@ -60,6 +65,7 @@ button {
   align-items: center;
   justify-content: center;
 }
+
 .image img {
   width: 90%;
   object-fit: cover;
@@ -74,13 +80,16 @@ button {
     justify-content: center;
     overflow: auto;
   }
+
   .content h1 {
     font-size: 2rem;
   }
+
   .box {
     justify-content: center;
     height: fit-content;
   }
+
   .content p {
     margin-top: 2rem;
     line-height: 1.4;

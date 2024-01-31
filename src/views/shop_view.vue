@@ -23,27 +23,32 @@ const openCakeModal = (cake: Cake): void => {
   cakeStore.setCurrentCake(cake);
   uiStore.toggleCakeCardModal();
 };
+
+
+const cake = {
+  cakeDescription: "Pastel de Chocolate",
+  cakeName: "Pastel Prieto",
+  cakePhoto: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  cover: "Choolate",
+  customMessage: "Happy BirthDay",
+  freeLactose: false,
+  messageColor: "blue",
+  price: 23.0,
+}
 </script>
 <template>
   <div v-if="uiStore.cakeCardModalOpen === false" class="shop-view">
     <h1>Popular</h1>
 
     <popularRow>
-      <div
-        v-for="cake in cakes"
-        class="carrousel-item"
-        @click="openCakeModal(cake)"
-      >
+      <div v-for="cake in cakes" class="carrousel-item" @click="openCakeModal(cake)">
         <img :src="cake.cakePhoto" alt="carrousel item image" />
       </div>
     </popularRow>
     <h1>All our flavours</h1>
-    <div class="loading" v-if="cakeStore.loading">
-      <i class="material-icons rotate">loop</i>
-    </div>
 
-    <cakeGrid v-else>
-      <cakeCard v-for="cake in cakes" :cake="cake" />
+    <cakeGrid>
+      <cakeCard v-for="i in 23" :cake="cake" />
     </cakeGrid>
   </div>
 </template>
@@ -79,6 +84,7 @@ h1 {
   object-fit: cover;
   object-position: center;
 }
+
 .loading {
   width: 100%;
   display: flex;
@@ -91,6 +97,7 @@ h1 {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(359deg);
   }
@@ -99,6 +106,7 @@ h1 {
 .rotate {
   animation: rotation 2s infinite linear reverse;
 }
+
 .loading i {
   font-size: 4rem;
 }

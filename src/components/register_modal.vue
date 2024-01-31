@@ -25,37 +25,21 @@ const submit = (user: User) => {
 <template>
   <div class="register-modal">
     <div class="toolbar">
-      <h2>Register</h2>
 
       <i class="material-icons" @click="uiStore.toggleRegisterModal()">
-        close</i
-      >
+        close</i>
     </div>
 
     <div class="form">
-      <input
-        v-model="user.email"
-        placeholder="e-mail"
-        type="email"
-        name="email"
-      />
-      <input
-        v-model="user.password"
-        placeholder="password"
-        type="password"
-        name="password"
-      />
-      <input
-        placeholder="confirm your password"
-        type="password"
-        name="password"
-      />
+      <input v-model="user.email" placeholder="e-mail" type="email" name="email" />
+      <input v-model="user.password" placeholder="password" type="password" name="password" />
+      <input placeholder="confirm your password" type="password" name="password" />
 
       <a @click="uiStore.toggleLoginModal"> Login </a>
     </div>
     <div class="actions">
       <primaryButton @click="submit(user)">
-        REGISTER
+        register
         <i v-if="uiStore.isLoading" class="material-icons rotate">loop</i>
       </primaryButton>
     </div>
@@ -65,16 +49,18 @@ const submit = (user: User) => {
 .register-modal {
   background-color: rgb(26, 27, 38);
   border-radius: 0.9rem;
-  width: 35%;
+  width: 30%;
   height: 20rem;
   display: flex;
   flex-direction: column;
 }
+
 a {
   font-size: 1rem;
   color: gray;
   cursor: pointer;
 }
+
 a:hover {
   color: rgb(242, 211, 171);
 }
@@ -93,19 +79,21 @@ input {
 ::placeholder {
   color: rgb(242, 211, 171);
 }
+
 .toolbar {
   display: flex;
   padding-top: 1rem;
   width: 90%;
   margin: auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
 }
 
 @keyframes rotation {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(359deg);
   }
@@ -114,25 +102,29 @@ input {
 .rotate {
   animation: rotation 2s infinite linear;
 }
+
 .toolbar i:hover {
   background-color: tomato;
   border-radius: 100%;
 }
+
 .form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 1rem;
+  gap: 1.2rem;
   margin: auto;
   align-items: center;
   height: 90%;
-  width: 90%;
+  width: 95%;
 }
+
 .actions {
   display: flex;
-  padding: 0.5rem;
+  padding-bottom: 2rem;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

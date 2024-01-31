@@ -26,33 +26,15 @@ const passwordType = computed(() =>
     </div>
 
     <div class="form">
-      <input
-        v-model="user.email"
-        type="email"
-        name="email"
-        placeholder="email"
-      />
+      <input v-model="user.email" type="email" name="email" placeholder="email" />
 
       <div class="password-input">
-        <input
-          v-model="user.password"
-          :type="passwordType"
-          placeholder="password"
-        />
+        <input v-model="user.password" :type="passwordType" placeholder="password" />
 
-        <button
-          v-if="isPasswordVisible === true"
-          @click="isPasswordVisible = !isPasswordVisible"
-          class="material-icons"
-        >
+        <button v-if="isPasswordVisible === true" @click="isPasswordVisible = !isPasswordVisible" class="material-icons">
           visibility_off
         </button>
-        <button
-          v-else
-          v-if="user.password !== ''"
-          @click="isPasswordVisible = !isPasswordVisible"
-          class="material-icons"
-        >
+        <button v-else v-if="user.password !== ''" @click="isPasswordVisible = !isPasswordVisible" class="material-icons">
           visibility
         </button>
       </div>
@@ -73,10 +55,11 @@ const passwordType = computed(() =>
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  height: 42%;
+  height: 35%;
   width: 25%;
   padding: 1rem;
   border-radius: 0.8rem;
+  border: solid 2px #2E2E4D;
 }
 
 a {
@@ -94,6 +77,7 @@ a:hover {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(359deg);
   }
@@ -102,6 +86,7 @@ a:hover {
 .rotate {
   animation: rotation 2s infinite linear;
 }
+
 .toolbar {
   display: flex;
   align-items: center;
@@ -109,6 +94,7 @@ a:hover {
   width: 100%;
   justify-content: space-between;
 }
+
 .toolbar i {
   color: tomato;
   cursor: pointer;
@@ -118,16 +104,17 @@ a:hover {
   height: 100%;
   display: flex;
   width: 100%;
+  justify-content: center;
+  gap: 1rem;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .password-input {
   display: flex;
   justify-content: center;
-  border-radius: 0.5rem;
   overflow: hidden;
 }
+
 .password-input button {
   outline: none;
   border: none;
@@ -142,12 +129,13 @@ a:hover {
 
 input {
   background-color: rgb(247, 218, 165);
+  width: 100%;
   border: none;
   text-align: center;
   color: rgb(73, 77, 126);
   outline: none;
-  height: 1.8rem;
-  border-radius: 0.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
 }
 
 button {

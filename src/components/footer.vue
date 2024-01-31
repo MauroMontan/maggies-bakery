@@ -12,14 +12,20 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   padding: 0.3rem;
+}
+
+.footer .legal {
+  opacity: 0.6;
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {
   .footer {
     justify-content: center;
   }
+
   .legal {
     font-size: 0.8rem;
   }

@@ -26,7 +26,7 @@ export const useUi = defineStore("uiStore", {
       {
         name: "Cart",
         route: "/cart",
-        auth: true,
+        auth: false,
       },
     ] as Array<MenuOption>,
   }),
